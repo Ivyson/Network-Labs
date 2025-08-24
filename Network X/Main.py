@@ -18,7 +18,7 @@ Graph.add_nodes_from(range(6))
 """
 0 Connected to 2, 5, 4
 1 Connected to 3, 4
-2, Connedcted to 5 and 0
+2 Connedcted to 5 and 0
 3 Connected to 1 
 4 Connected to 0, 1, 5
 5 Connected to 0, 2, 4
