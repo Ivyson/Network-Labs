@@ -1,6 +1,7 @@
 """
 This will sketch the router topology that we used for Dijsktra (Or whatever..)
 """
+
 import networkx as nx
 import matplotlib.pyplot as plt
 
@@ -24,42 +25,46 @@ Graph.add_nodes_from(range(6))
 5 Connected to 0, 2, 4
 """
 # Parameters: From point, To Point, Weight of the edge
-# Step 2.3. Add Weights to the Edges
-edges = [(0, 2, 4), (1, 3, 3), (2, 5, 10), (4, 1, 8),(5, 4,2),(0, 4,1), (0, 5, 10)]
+# Step 2.3. Add Weights to the Edges, Format is (point1, point 2, weight_of_connection)
+edges = [(0, 2, 4), (1, 3, 3), (2, 5, 10), (4, 1, 8), (5, 4, 2), (0, 4, 1), (0, 5, 10)]
 # Use weighted  edges instead of just edges, to attach weights to each thing
 Graph.add_weighted_edges_from(edges)
 # Step 2.4 Add Positions of each node
 positions = {
     0: (0.25, 0.8),
-    1:(0.675, 0.45),
-    2:(0.0, 0.75),
-    3:(1.1, 0.25),
-    4:(0.45, 0.55),
-    5:(0.2, 0.5)
+    1: (0.675, 0.45),
+    2: (0.0, 0.75),
+    3: (1.1, 0.25),
+    4: (0.45, 0.55),
+    5: (0.2, 0.5),
 }
 
-# Compute the shortest path 
+# Compute the shortest path
 
-path = nx.shortest_path(Graph, source=3, target=4, weight='weight')
+path = nx.shortest_path(Graph, source=3, target=4, weight="weight")
 
 # short_edges = list(zip())
 # print(list(zip(path[:-1], path[:1])))
-print(f'the path: {path}')
-edge_list = list(zip(path[:-1],path[1:]))
-# print(f'The Path[1:]: {path[1:]}')
-# print(f'The Path[:-1]: {path[:-1]}')
-# print(f'The zipped list: {list(zip(path[:-1],path[1:]))}')
-# layout = nx.spring_layout(Graph, scale=2)
-nx.draw(G=Graph,pos=positions,with_labels=True, font_weight='bold', node_color='blue', edge_color='black', node_size=200)
-edge_labels = nx.get_edge_attributes(Graph, 'weight')  # Get edge labels
-nx.draw_networkx_edges(Graph, pos=positions,  edgelist=edge_list, edge_color='red', width=2)
-edge_labels = nx.get_edge_attributes(Graph, 'weight')
+print(f"the path: {path}")
+edge_list = list(zip(path[:-1], path[1:]))
+nx.draw(
+    G=Graph,
+    pos=positions,
+    with_labels=True,
+    font_weight="bold",
+    node_color="blue",
+    edge_color="black",
+    node_size=200,
+)
+edge_labels = nx.get_edge_attributes(Graph, "weight")  # Get edge labels
+nx.draw_networkx_edges(
+    Graph, pos=positions, edgelist=edge_list, edge_color="red", width=2
+)
+edge_labels = nx.get_edge_attributes(Graph, "weight")
 # print(edge_labels)
-fixed_labels = {
-    edge: f'C = {weight}' for edge, weight in edge_labels.items()
-}
+fixed_labels = {edge: f"C = {weight}" for edge, weight in edge_labels.items()}
 # print(fixed_labels)
 nx.draw_networkx_edge_labels(Graph, pos=positions, edge_labels=fixed_labels)
 plt.show()
 # the shortest Path from 0, to 3 is:
-print(f'Shortest Path : {path}')
+print(f"Shortest Path : {path}")
