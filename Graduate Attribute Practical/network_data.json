@@ -1,0 +1,700 @@
+{
+    "bgp-rib:rib": [
+        {
+            "id": "bgp-to-r1",
+            "peer": [
+                {
+                    "peer-id": "bgp://192.168.56.1",
+                    "supported-tables": [
+                        {
+                            "afi": "bgp-types:ipv4-address-family",
+                            "safi": "bgp-types:unicast-subsequent-address-family",
+                            "send-receive": "receive"
+                        }
+                    ],
+                    "effective-rib-in": {
+                        "tables": [
+                            {
+                                "afi": "bgp-types:ipv4-address-family",
+                                "safi": "bgp-types:unicast-subsequent-address-family",
+                                "attributes": {
+                                    "uptodate": true
+                                },
+                                "bgp-inet:ipv4-routes": {
+                                    "ipv4-route": [
+                                        {
+                                            "path-id": 0,
+                                            "route-key": "10.0.31.0/30",
+                                            "prefix": "10.0.31.0/30",
+                                            "attributes": {
+                                                "origin": {
+                                                    "value": "incomplete"
+                                                },
+                                                "multi-exit-disc": {
+                                                    "med": 3
+                                                },
+                                                "local-pref": {
+                                                    "pref": 100
+                                                },
+                                                "ipv4-next-hop": {
+                                                    "global": "10.0.25.1"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "path-id": 0,
+                                            "route-key": "10.0.34.0/30",
+                                            "prefix": "10.0.34.0/30",
+                                            "attributes": {
+                                                "origin": {
+                                                    "value": "incomplete"
+                                                },
+                                                "multi-exit-disc": {
+                                                    "med": 4
+                                                },
+                                                "local-pref": {
+                                                    "pref": 100
+                                                },
+                                                "ipv4-next-hop": {
+                                                    "global": "10.0.25.1"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "path-id": 0,
+                                            "route-key": "192.168.1.1/32",
+                                            "prefix": "192.168.1.1/32",
+                                            "attributes": {
+                                                "origin": {
+                                                    "value": "igp"
+                                                },
+                                                "multi-exit-disc": {
+                                                    "med": 0
+                                                },
+                                                "local-pref": {
+                                                    "pref": 100
+                                                },
+                                                "ipv4-next-hop": {
+                                                    "global": "192.168.56.1"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "path-id": 0,
+                                            "route-key": "192.168.2.4/32",
+                                            "prefix": "192.168.2.4/32",
+                                            "attributes": {
+                                                "origin": {
+                                                    "value": "incomplete"
+                                                },
+                                                "multi-exit-disc": {
+                                                    "med": 2
+                                                },
+                                                "local-pref": {
+                                                    "pref": 100
+                                                },
+                                                "ipv4-next-hop": {
+                                                    "global": "10.0.25.1"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "path-id": 0,
+                                            "route-key": "192.168.56.0/24",
+                                            "prefix": "192.168.56.0/24",
+                                            "attributes": {
+                                                "origin": {
+                                                    "value": "incomplete"
+                                                },
+                                                "multi-exit-disc": {
+                                                    "med": 0
+                                                },
+                                                "local-pref": {
+                                                    "pref": 100
+                                                },
+                                                "ipv4-next-hop": {
+                                                    "global": "192.168.56.1"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "path-id": 0,
+                                            "route-key": "10.0.25.0/30",
+                                            "prefix": "10.0.25.0/30",
+                                            "attributes": {
+                                                "origin": {
+                                                    "value": "incomplete"
+                                                },
+                                                "multi-exit-disc": {
+                                                    "med": 0
+                                                },
+                                                "local-pref": {
+                                                    "pref": 100
+                                                },
+                                                "ipv4-next-hop": {
+                                                    "global": "192.168.56.1"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "path-id": 0,
+                                            "route-key": "192.168.2.3/32",
+                                            "prefix": "192.168.2.3/32",
+                                            "attributes": {
+                                                "origin": {
+                                                    "value": "incomplete"
+                                                },
+                                                "multi-exit-disc": {
+                                                    "med": 3
+                                                },
+                                                "local-pref": {
+                                                    "pref": 100
+                                                },
+                                                "ipv4-next-hop": {
+                                                    "global": "10.0.25.1"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "path-id": 0,
+                                            "route-key": "192.168.2.2/32",
+                                            "prefix": "192.168.2.2/32",
+                                            "attributes": {
+                                                "origin": {
+                                                    "value": "incomplete"
+                                                },
+                                                "multi-exit-disc": {
+                                                    "med": 1
+                                                },
+                                                "local-pref": {
+                                                    "pref": 100
+                                                },
+                                                "ipv4-next-hop": {
+                                                    "global": "10.0.25.1"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "path-id": 0,
+                                            "route-key": "192.168.2.1/32",
+                                            "prefix": "192.168.2.1/32",
+                                            "attributes": {
+                                                "origin": {
+                                                    "value": "incomplete"
+                                                },
+                                                "multi-exit-disc": {
+                                                    "med": 2
+                                                },
+                                                "local-pref": {
+                                                    "pref": 100
+                                                },
+                                                "ipv4-next-hop": {
+                                                    "global": "10.0.25.1"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "path-id": 0,
+                                            "route-key": "10.0.12.0/30",
+                                            "prefix": "10.0.12.0/30",
+                                            "attributes": {
+                                                "origin": {
+                                                    "value": "incomplete"
+                                                },
+                                                "multi-exit-disc": {
+                                                    "med": 2
+                                                },
+                                                "local-pref": {
+                                                    "pref": 100
+                                                },
+                                                "ipv4-next-hop": {
+                                                    "global": "10.0.25.1"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "path-id": 0,
+                                            "route-key": "10.0.24.0/30",
+                                            "prefix": "10.0.24.0/30",
+                                            "attributes": {
+                                                "origin": {
+                                                    "value": "incomplete"
+                                                },
+                                                "multi-exit-disc": {
+                                                    "med": 2
+                                                },
+                                                "local-pref": {
+                                                    "pref": 100
+                                                },
+                                                "ipv4-next-hop": {
+                                                    "global": "10.0.25.1"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    "adj-rib-out": {
+                        "tables": [
+                            {
+                                "afi": "bgp-types:ipv4-address-family",
+                                "safi": "bgp-types:unicast-subsequent-address-family"
+                            }
+                        ]
+                    },
+                    "adj-rib-in": {
+                        "tables": [
+                            {
+                                "afi": "bgp-types:ipv4-address-family",
+                                "safi": "bgp-types:unicast-subsequent-address-family",
+                                "attributes": {
+                                    "uptodate": true
+                                },
+                                "bgp-inet:ipv4-routes": {
+                                    "ipv4-route": [
+                                        {
+                                            "path-id": 0,
+                                            "route-key": "10.0.31.0/30",
+                                            "prefix": "10.0.31.0/30",
+                                            "attributes": {
+                                                "origin": {
+                                                    "value": "incomplete"
+                                                },
+                                                "multi-exit-disc": {
+                                                    "med": 3
+                                                },
+                                                "local-pref": {
+                                                    "pref": 100
+                                                },
+                                                "ipv4-next-hop": {
+                                                    "global": "10.0.25.1"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "path-id": 0,
+                                            "route-key": "10.0.34.0/30",
+                                            "prefix": "10.0.34.0/30",
+                                            "attributes": {
+                                                "origin": {
+                                                    "value": "incomplete"
+                                                },
+                                                "multi-exit-disc": {
+                                                    "med": 4
+                                                },
+                                                "local-pref": {
+                                                    "pref": 100
+                                                },
+                                                "ipv4-next-hop": {
+                                                    "global": "10.0.25.1"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "path-id": 0,
+                                            "route-key": "192.168.1.1/32",
+                                            "prefix": "192.168.1.1/32",
+                                            "attributes": {
+                                                "origin": {
+                                                    "value": "igp"
+                                                },
+                                                "multi-exit-disc": {
+                                                    "med": 0
+                                                },
+                                                "local-pref": {
+                                                    "pref": 100
+                                                },
+                                                "ipv4-next-hop": {
+                                                    "global": "192.168.56.1"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "path-id": 0,
+                                            "route-key": "192.168.2.4/32",
+                                            "prefix": "192.168.2.4/32",
+                                            "attributes": {
+                                                "origin": {
+                                                    "value": "incomplete"
+                                                },
+                                                "multi-exit-disc": {
+                                                    "med": 2
+                                                },
+                                                "local-pref": {
+                                                    "pref": 100
+                                                },
+                                                "ipv4-next-hop": {
+                                                    "global": "10.0.25.1"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "path-id": 0,
+                                            "route-key": "192.168.56.0/24",
+                                            "prefix": "192.168.56.0/24",
+                                            "attributes": {
+                                                "origin": {
+                                                    "value": "incomplete"
+                                                },
+                                                "multi-exit-disc": {
+                                                    "med": 0
+                                                },
+                                                "local-pref": {
+                                                    "pref": 100
+                                                },
+                                                "ipv4-next-hop": {
+                                                    "global": "192.168.56.1"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "path-id": 0,
+                                            "route-key": "10.0.25.0/30",
+                                            "prefix": "10.0.25.0/30",
+                                            "attributes": {
+                                                "origin": {
+                                                    "value": "incomplete"
+                                                },
+                                                "multi-exit-disc": {
+                                                    "med": 0
+                                                },
+                                                "local-pref": {
+                                                    "pref": 100
+                                                },
+                                                "ipv4-next-hop": {
+                                                    "global": "192.168.56.1"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "path-id": 0,
+                                            "route-key": "192.168.2.3/32",
+                                            "prefix": "192.168.2.3/32",
+                                            "attributes": {
+                                                "origin": {
+                                                    "value": "incomplete"
+                                                },
+                                                "multi-exit-disc": {
+                                                    "med": 3
+                                                },
+                                                "local-pref": {
+                                                    "pref": 100
+                                                },
+                                                "ipv4-next-hop": {
+                                                    "global": "10.0.25.1"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "path-id": 0,
+                                            "route-key": "192.168.2.2/32",
+                                            "prefix": "192.168.2.2/32",
+                                            "attributes": {
+                                                "origin": {
+                                                    "value": "incomplete"
+                                                },
+                                                "multi-exit-disc": {
+                                                    "med": 1
+                                                },
+                                                "local-pref": {
+                                                    "pref": 100
+                                                },
+                                                "ipv4-next-hop": {
+                                                    "global": "10.0.25.1"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "path-id": 0,
+                                            "route-key": "192.168.2.1/32",
+                                            "prefix": "192.168.2.1/32",
+                                            "attributes": {
+                                                "origin": {
+                                                    "value": "incomplete"
+                                                },
+                                                "multi-exit-disc": {
+                                                    "med": 2
+                                                },
+                                                "local-pref": {
+                                                    "pref": 100
+                                                },
+                                                "ipv4-next-hop": {
+                                                    "global": "10.0.25.1"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "path-id": 0,
+                                            "route-key": "10.0.12.0/30",
+                                            "prefix": "10.0.12.0/30",
+                                            "attributes": {
+                                                "origin": {
+                                                    "value": "incomplete"
+                                                },
+                                                "multi-exit-disc": {
+                                                    "med": 2
+                                                },
+                                                "local-pref": {
+                                                    "pref": 100
+                                                },
+                                                "ipv4-next-hop": {
+                                                    "global": "10.0.25.1"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "path-id": 0,
+                                            "route-key": "10.0.24.0/30",
+                                            "prefix": "10.0.24.0/30",
+                                            "attributes": {
+                                                "origin": {
+                                                    "value": "incomplete"
+                                                },
+                                                "multi-exit-disc": {
+                                                    "med": 2
+                                                },
+                                                "local-pref": {
+                                                    "pref": 100
+                                                },
+                                                "ipv4-next-hop": {
+                                                    "global": "10.0.25.1"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    "peer-role": "ibgp"
+                }
+            ],
+            "loc-rib": {
+                "tables": [
+                    {
+                        "afi": "bgp-types:ipv4-address-family",
+                        "safi": "bgp-types:unicast-subsequent-address-family",
+                        "attributes": {
+                            "uptodate": true
+                        },
+                        "bgp-inet:ipv4-routes": {
+                            "ipv4-route": [
+                                {
+                                    "path-id": 0,
+                                    "route-key": "10.0.31.0/30",
+                                    "prefix": "10.0.31.0/30",
+                                    "attributes": {
+                                        "origin": {
+                                            "value": "incomplete"
+                                        },
+                                        "multi-exit-disc": {
+                                            "med": 3
+                                        },
+                                        "local-pref": {
+                                            "pref": 100
+                                        },
+                                        "ipv4-next-hop": {
+                                            "global": "10.0.25.1"
+                                        }
+                                    }
+                                },
+                                {
+                                    "path-id": 0,
+                                    "route-key": "10.0.34.0/30",
+                                    "prefix": "10.0.34.0/30",
+                                    "attributes": {
+                                        "origin": {
+                                            "value": "incomplete"
+                                        },
+                                        "multi-exit-disc": {
+                                            "med": 4
+                                        },
+                                        "local-pref": {
+                                            "pref": 100
+                                        },
+                                        "ipv4-next-hop": {
+                                            "global": "10.0.25.1"
+                                        }
+                                    }
+                                },
+                                {
+                                    "path-id": 0,
+                                    "route-key": "192.168.1.1/32",
+                                    "prefix": "192.168.1.1/32",
+                                    "attributes": {
+                                        "origin": {
+                                            "value": "igp"
+                                        },
+                                        "multi-exit-disc": {
+                                            "med": 0
+                                        },
+                                        "local-pref": {
+                                            "pref": 100
+                                        },
+                                        "ipv4-next-hop": {
+                                            "global": "192.168.56.1"
+                                        }
+                                    }
+                                },
+                                {
+                                    "path-id": 0,
+                                    "route-key": "192.168.2.4/32",
+                                    "prefix": "192.168.2.4/32",
+                                    "attributes": {
+                                        "origin": {
+                                            "value": "incomplete"
+                                        },
+                                        "multi-exit-disc": {
+                                            "med": 2
+                                        },
+                                        "local-pref": {
+                                            "pref": 100
+                                        },
+                                        "ipv4-next-hop": {
+                                            "global": "10.0.25.1"
+                                        }
+                                    }
+                                },
+                                {
+                                    "path-id": 0,
+                                    "route-key": "192.168.56.0/24",
+                                    "prefix": "192.168.56.0/24",
+                                    "attributes": {
+                                        "origin": {
+                                            "value": "incomplete"
+                                        },
+                                        "multi-exit-disc": {
+                                            "med": 0
+                                        },
+                                        "local-pref": {
+                                            "pref": 100
+                                        },
+                                        "ipv4-next-hop": {
+                                            "global": "192.168.56.1"
+                                        }
+                                    }
+                                },
+                                {
+                                    "path-id": 0,
+                                    "route-key": "10.0.25.0/30",
+                                    "prefix": "10.0.25.0/30",
+                                    "attributes": {
+                                        "origin": {
+                                            "value": "incomplete"
+                                        },
+                                        "multi-exit-disc": {
+                                            "med": 0
+                                        },
+                                        "local-pref": {
+                                            "pref": 100
+                                        },
+                                        "ipv4-next-hop": {
+                                            "global": "192.168.56.1"
+                                        }
+                                    }
+                                },
+                                {
+                                    "path-id": 0,
+                                    "route-key": "192.168.2.3/32",
+                                    "prefix": "192.168.2.3/32",
+                                    "attributes": {
+                                        "origin": {
+                                            "value": "incomplete"
+                                        },
+                                        "multi-exit-disc": {
+                                            "med": 3
+                                        },
+                                        "local-pref": {
+                                            "pref": 100
+                                        },
+                                        "ipv4-next-hop": {
+                                            "global": "10.0.25.1"
+                                        }
+                                    }
+                                },
+                                {
+                                    "path-id": 0,
+                                    "route-key": "192.168.2.2/32",
+                                    "prefix": "192.168.2.2/32",
+                                    "attributes": {
+                                        "origin": {
+                                            "value": "incomplete"
+                                        },
+                                        "multi-exit-disc": {
+                                            "med": 1
+                                        },
+                                        "local-pref": {
+                                            "pref": 100
+                                        },
+                                        "ipv4-next-hop": {
+                                            "global": "10.0.25.1"
+                                        }
+                                    }
+                                },
+                                {
+                                    "path-id": 0,
+                                    "route-key": "192.168.2.1/32",
+                                    "prefix": "192.168.2.1/32",
+                                    "attributes": {
+                                        "origin": {
+                                            "value": "incomplete"
+                                        },
+                                        "multi-exit-disc": {
+                                            "med": 2
+                                        },
+                                        "local-pref": {
+                                            "pref": 100
+                                        },
+                                        "ipv4-next-hop": {
+                                            "global": "10.0.25.1"
+                                        }
+                                    }
+                                },
+                                {
+                                    "path-id": 0,
+                                    "route-key": "10.0.12.0/30",
+                                    "prefix": "10.0.12.0/30",
+                                    "attributes": {
+                                        "origin": {
+                                            "value": "incomplete"
+                                        },
+                                        "multi-exit-disc": {
+                                            "med": 2
+                                        },
+                                        "local-pref": {
+                                            "pref": 100
+                                        },
+                                        "ipv4-next-hop": {
+                                            "global": "10.0.25.1"
+                                        }
+                                    }
+                                },
+                                {
+                                    "path-id": 0,
+                                    "route-key": "10.0.24.0/30",
+                                    "prefix": "10.0.24.0/30",
+                                    "attributes": {
+                                        "origin": {
+                                            "value": "incomplete"
+                                        },
+                                        "multi-exit-disc": {
+                                            "med": 2
+                                        },
+                                        "local-pref": {
+                                            "pref": 100
+                                        },
+                                        "ipv4-next-hop": {
+                                            "global": "10.0.25.1"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
