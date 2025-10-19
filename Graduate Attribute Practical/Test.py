@@ -40,6 +40,7 @@ for net in networks:
 
 Graph = nx.Graph()
 for link, info in interface_map.items():
+    print(f"Link: {link}, Info: {info}")
     routers = [r for r in info.keys() if r.startswith("R")]
     if len(routers) == 2:
         r1, r2 = routers
@@ -58,5 +59,7 @@ edge_labels = nx.get_edge_attributes(Graph, "label")
 nx.draw_networkx_edge_labels(Graph, position, edge_labels=edge_labels, font_color="red")
 plt.title("Network Topology")
 plt.axis("off")
-plt.savefig("223146145_topology.png")
+plt.savefig("223146145_topology.png", dpi=300, bbox_inches="tight", pad_inches=0.1)
+
 plt.show()
+plt.close()
