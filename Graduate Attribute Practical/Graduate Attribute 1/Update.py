@@ -1,3 +1,12 @@
+"""
+While the main File is responsible for Querying the ODL
+and getting the metadata from it, then printing the topology, we were then required to 
+make the matplotlib graph to be interactive; that it, reflect the topological changes 
+and reflect them on our plot immediately. This update does all of that natively without
+importing from the main function. This is because, the implementation was done in a fast
+paced environment, and the main code was not touched as at least it was a fail safe, which was working.
+"""
+
 import json
 import networkx as nx
 import matplotlib.pyplot as plt
@@ -12,12 +21,14 @@ from collections import deque
 class NetworkDataRetriever:
     """Handles retrieval of network data from OpenDaylight controller"""
 
-    def __init__(self, odl_host: str = "192.168.56.104", odl_port: str = "8181"):
+    def __init__(self, odl_host: str = "192.168.56.104", odl_port: str = "8181",password="admin", name="admin"):
         self.odl_host = odl_host
         self.odl_port = odl_port
+        self.password = password
+        self.name = name
         self.base_url = f"http://{odl_host}:{odl_port}/rests"
         self.http = httplib2.Http(".cache")
-        self.http.add_credentials(name="admin", password="admin")
+        self.http.add_credentials(name=self.name, password=self.password)
 
     def get_bgp_rib_data(self, rib_name: str = "bgp-to-r1") -> dict:
         """Retrieve BGP RIB data from ODL controller"""
@@ -32,7 +43,7 @@ class NetworkDataRetriever:
                 print(f"Error retrieving BGP RIB data: HTTP {response.status}")
                 return {}
         except Exception as e:
-            print(f"Exception while retrieving BGP RIB data: {e}")
+            print(f"Exception found while retrieving BGP RIB data: {e}")
             return {}
 
     def get_topology_data(self) -> dict:

@@ -1,6 +1,6 @@
 import socket
 import threading
-import time # Import time
+import time # Import time For simulation purposes...
 
 host = '127.0.0.1'
 port = 9999
@@ -21,16 +21,16 @@ def handle_client(client_socket, address):
 
                 # Simulate a time-consuming operation
                 print(f"Processing client {address} for 3 seconds...")
-                time.sleep(3) # Simulate some work
-                print(f"Finished processing client {address}")
+                time.sleep(3) 
+                print(f"Done, processing client of address:  {address}")
 
 
-                sent_message = f'Server Received: {decoded_data}'
+                sent_message = f'server Received: {decoded_data}\n'
                 client_socket.sendall(sent_message.encode('utf-8'))
-                print(f'Sent response to {address}')
+                print(f'Sent response to client of address:  {address}')
 
             except UnicodeDecodeError as e:
-                print(f'Error decoding data from {address}: {e}')
+                print(f'Error decoding data from {address}: {e}, Try experimenting with different Encoding methods(utf-8)..')
                 break
 
     except socket.error as e:
@@ -44,7 +44,6 @@ def handle_client(client_socket, address):
         client_socket.close()
 
 def main():
-    """Main function to start the server and handle connections."""
     try:
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as Server:
             Server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)

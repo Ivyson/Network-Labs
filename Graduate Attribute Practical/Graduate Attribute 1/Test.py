@@ -1,3 +1,14 @@
+"""
+The code in this file is used as a test implementation. 
+This is to help speed up the process of prototyping, 
+As its currently not feasible to test on the actual Open Day Light Controller
+-------
+The approach here is that, You query the ODL once, and save the data it produces on a json file,
+Then work from that json file, preprocess it up until it produces the right output. 
+As soon as Implementatiopn works well, we can then migrate the reading from a file to reading off
+of a GET request response.
+"""
+
 import json
 import matplotlib.pyplot as plt
 import networkx as nx
@@ -47,7 +58,7 @@ for link, info in interface_map.items():
         network = info["network"]
         Graph.add_edge(r1, r2, label=network)
 
-position = nx.spring_layout(Graph, seed=42)
+position = nx.spring_layout(Graph, seed=42) # Seed param ensures that the rand val generated will be reprodicible..
 nx.draw_networkx_nodes(
     Graph, position, node_size=2000, node_color="lightblue", edgecolors="black"
 )
@@ -60,6 +71,5 @@ nx.draw_networkx_edge_labels(Graph, position, edge_labels=edge_labels, font_colo
 plt.title("Network Topology")
 plt.axis("off")
 plt.savefig("223146145_topology.png", dpi=300, bbox_inches="tight", pad_inches=0.1)
-
 plt.show()
 plt.close()
