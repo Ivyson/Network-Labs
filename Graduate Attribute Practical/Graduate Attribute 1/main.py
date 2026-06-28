@@ -240,7 +240,7 @@ class NetworkVisualiser:
 
         return metrics
 
-    def visualise_topology(self, output_file: str = "223146145_topology.png"):
+    def visualise_topology(self, output_file: str = "topology.png"):
         """Generate and save network topology visualisation"""
         if not self.graph or self.graph.number_of_nodes() == 0:
             print("No topology data to visualise")
@@ -346,7 +346,7 @@ class OutputFormatter:
             for r in routes
             if "/30" in r.get("prefix", "") and r.get("prefix", "").startswith("10.0.")
         ]
-        management = [r for r in routes if "192.168.56" in r.get("prefix", "")]
+        management = [r for r in routes if "192.168.56" in r.get("prefix", "")] # For testing
 
         # Display loopback routes
         if loopbacks:
@@ -427,10 +427,10 @@ class OutputFormatter:
 
 def main():
     """Main application execution"""
-    print("\n" + "=" * 80)
+    # print("\n" + "=" * 80)
     print(" OPENDAYLIGHT SDN NETWORK ANALYSIS APPLICATION")
-    print(" Student ID: 223146145")
-    print("=" * 80)
+    print(" Student ID: *********")
+    # print("=" * 80)
 
     # Step 1: Retrieve data from ODL controller
     print("\n[1/5] Connecting to OpenDaylight Controller...")
@@ -444,7 +444,7 @@ def main():
     # Save raw data for reference
     with open("network_data.json", "w", encoding="utf8") as f:
         json.dump(bgp_data, f, indent=4, ensure_ascii=False)
-    print("      Raw network data saved to: network_data.json")
+    print("Raw network data saved to: network_data.json")
 
     # Step 2: Analyse BGP data
     print("\n[2/5] Analysing BGP Information...")
@@ -486,7 +486,7 @@ def main():
         f"  - Network topology contains {network_metrics.get('total_routers', 0)} routers"
     )
     print(f"  - Topology visualisation saved")
-    print(f"\nSDN Integration: SUCCESS ✓")
+    print(f"\nSDN Integration: SUCCESS")
     print("=" * 80 + "\n")
 
 

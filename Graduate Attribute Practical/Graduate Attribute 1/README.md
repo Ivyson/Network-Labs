@@ -1,14 +1,14 @@
 # OpenDaylight SDN Network Analysis Application
 
-This folder contains MY Graduate Attribute 1 practical solution for the SDN integration project using OpenDaylight (ODL) in Network Systems 3. The main application is in `Main.py` and performs the following operations:
+This folder contains MY Graduate Attribute 1 practical solution for the SDN integration project using OpenDaylight (ODL) in Network Systems 3. The main application is in `main.py` and performs the following operations:
 - BGP RIB retrieval from ODL
 - BGP peer and route analysis
 - Topology inference from BGP/OSPF route prefixes
 - Network metrics calculation (connectivity, diameter, average degree, shortest path)
 - Visual topology graph generation (`.png` output)
-Bare in mind that the `Main.py` file does not provide real time changes of the Network topology, If real time chanegs are require, inspect the file `update.py` which makes use of `Matplotlib`'s animation to refresh the data after a second and if the router stops replying, then we assume its down or disconnected(Either intentionally or not).
+Bare in mind that the `main.py` file does not provide real time changes of the Network topology, If real time chanegs are require, change the implimantation from a static drawing to a continious animation, which makes use of `Matplotlib`'s animation to refresh the data after a second and if the router stops replying, then we assume its down or disconnected(Either intentionally or not).
 
-> Note: This repo uses the my student details (ID `223146145`) for confirming identity and to ensure that i ddi not copy the work of my peers, If you would like to change it, Do so. Also, an ODL connection was assigned to Port `192.168.56.104:8181` with credentials `admin/admin`.
+> Note: This repo uses the my student details for confirming identity and to ensure that i ddi not copy the work of my peers, If you would like to change it, Do so. Also, an ODL connection was assigned to Port `192.168.56.104:8181` with credentials `admin/admin`.
 
 ## Requirements
 This was implemented in `Python 3.13` and should work well with Previous Python up to `Python 3.12/10`. And the packages heavily used in this implementation, are:
@@ -17,19 +17,20 @@ This was implemented in `Python 3.13` and should work well with Previous Python 
 - `matplotlib`
 To test the code, you can clone the repo to your environment, and navigate to the repository,Then Install dependencies:
 ```bash
-git clone https://github.com/Ivyson/Network-Labs/tree/main
+git clone https://github.com/Ivyson/Network-Labs.git
 cd "Graduate Attribute Practical"
 cd "Graduate Attribute 1"
+uv sync
 uv run main.py
 ```
 Luckily if you are using `uv`, it will automatically pull the imports into your virtual environment and execute the code instantly.
 Sadly, this will have to pull all of the codebase in this repo...
 ## Files
-- `Main.py`: main script and implementation classes
+- `main.py`: main script and implementation classes
 - `network_data.json`: runtime artifact (saved JSON BGP RIB data)
 
 ## Architecture
-`Main.py` contains:
+`main.py` contains:
 1. `NetworkDataRetriever` - HTTP requests to ODL RESTCONF
    - `get_bgp_rib_data(rib_name='bgp-to-r1')`
    - `get_topology_data()` (present but not used in this version)
@@ -50,7 +51,7 @@ Sadly, this will have to pull all of the codebase in this repo...
 2. Set up the controller with BGP route leakage into `bgp-to-r1` RIB.
 3. Launch:
 ```bash
-uv run Main.py
+uv run main.py
 ```
 4. The app writes `network_data.json` and topology image `223146145_topology.png`.
 
